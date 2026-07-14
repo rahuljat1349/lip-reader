@@ -12,4 +12,9 @@ websockets
 numpy
 sentencepiece
 scipy
-# omegaconf, hydra-core, and fairseq are installed by setup_avhubert.sh (see build command)
+tqdm
+sacrebleu
+bitarray
+scikit-learn
+torchaudio
+# omegaconf, hydra-core, and fairseq are installed by setup_avhubert.sh
