@@ -8,3 +8,5 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.12.11
+      - key: LIPREADER_CORS_ORIGINS
+        value: http://localhost:3000,https://your-frontend-domain.vercel.app

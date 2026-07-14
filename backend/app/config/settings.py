@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     device: str = "auto"
     ws_max_frames: int = 300
     temp_dir: str = "tmp"
+    cors_origins: str = "http://localhost:3000"
 
     model_config = {"env_prefix": "LIPREADER_", "env_file": ".env"}
 
