@@ -14,4 +14,4 @@ sentencepiece
 scipy
 omegaconf
 hydra-core
-fairseq
+# fairseq is installed from GitHub by setup_avhubert.sh (PyPI sdist missing version.txt)
