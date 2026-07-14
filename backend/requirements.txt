@@ -12,6 +12,6 @@ websockets
 numpy
 sentencepiece
 scipy
-omegaconf
-hydra-core
+omegaconf>=2.0.5,<2.1
+hydra-core>=1.0.7,<1.1
 # fairseq is installed from GitHub by setup_avhubert.sh (PyPI sdist missing version.txt)
