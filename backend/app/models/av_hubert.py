@@ -1,4 +1,5 @@
 import logging
+import os
 import sys
 
 import torch
@@ -8,9 +9,12 @@ from app.models.base import BaseVSRModel
 
 logger = logging.getLogger(__name__)
 
-HUB_DIR = "/Users/rahuldudi/.cache/torch/hub/facebookresearch_av_hubert_main"
 CHECKPOINT_PATH = "checkpoints/vsr_base_full_model.pt"
 MAX_GEN_TOKENS = 500
+
+AVHUBERT_DIR = os.environ.get("AVHUBERT_DIR") or os.path.join(
+    os.path.dirname(__file__), "..", "..", "vendor", "av_hubert"
+)
 
 
 class AVHubertModel(BaseVSRModel):
@@ -24,8 +28,9 @@ class AVHubertModel(BaseVSRModel):
         model = None
         tgt_dict = None
         try:
-            sys.path.insert(0, HUB_DIR)
+            sys.path.insert(0, AVHUBERT_DIR)
             import fairseq  # noqa: F401
+            import avhubert  # noqa: F401 — registers custom model architectures
 
             model = torch.load(CHECKPOINT_PATH, map_location=device, weights_only=False)
             model.eval()
